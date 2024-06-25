@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts',
     'daphne',
+    'accounts',
     'chat',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -142,8 +142,8 @@ LOGOUT_REDIRECT_URL = "home" # same thing as above
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres_for_the_moon',
-        'USER': 'postgres ',
+        'NAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': 'hieulua10',
         'HOST': 'localhost',
         'PORT': '5432',
