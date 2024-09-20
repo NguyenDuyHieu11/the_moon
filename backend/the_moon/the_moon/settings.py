@@ -122,7 +122,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
-    os.path.join(BASE_DIR.parent.parent, 'frontend\dist'), # !!! this dir might be wrong, it supposes to be angular build output
+    os.path.join(BASE_DIR.parent.parent, 'frontend/dist'), # !!! this dir might be wrong, it supposes to be angular build output
 ]
 
 # Directory where collectstatic will gather all static files
@@ -157,10 +157,10 @@ DATABASES = {
         'PORT': '5432',
     },
     
-    'mongodb': {
-           'ENGINE': 'djongo',
-           'NAME': 'mongodb_for_the_moon',
-           'HOST': 'localhost',
-           'PORT': 27017,
-       }
+    # 'mongodb': {
+    #        'ENGINE': 'djongo',
+    #        'NAME': 'mongodb_for_the_moon',
+    #        'HOST': 'localhost',
+    #        'PORT': 27017,
+    #    }
 }

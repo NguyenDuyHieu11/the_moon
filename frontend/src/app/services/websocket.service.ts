@@ -3,18 +3,23 @@
 import { Injectable } from '@angular/core';
 import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 
-global.WebSocket = require('ws');
+// WebSocket = require('ws');
 @Injectable({
   providedIn: 'root',
 })
 export class WebSocketService {
   private socket$: WebSocketSubject<any>;
-  
+  roomName!: string; /*HAVE NOT DEALED WITH THIS YET*/
+
   constructor() {
     this.socket$ = webSocket({
       // use wss for https support
-      url: 'ws://localhost:8000/ws/chat/',
+      url: this.createWebSocketUrl()
     });
+  }
+
+  private createWebSocketUrl(): string {
+    return `ws://127.0.0.1:8000/ws/chat/${this.roomName}/`;
   }
 
   sendMessage(message: string): void {

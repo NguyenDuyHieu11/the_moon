@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatComponent } from "../chat/chat.component";
+import { ChatComponent } from "./mainchat/chat.component";
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,4 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HomeComponent {
 
+    messageOnSent(message: string) {
+
+    }
 }
