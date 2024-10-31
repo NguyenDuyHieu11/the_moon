@@ -1,6 +1,4 @@
-# chat/consumers.py
 import json
-
 from channels.generic.websocket import AsyncWebsocketConsumer
 
 
@@ -28,6 +26,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             self.room_group_name, {"type": "chat_message", "message": message}
         )
 
+    # This method of all consumers in the same group chat is triggered by the receive method
     # Receive message from room group
     async def chat_message(self, event):
         message = event["message"]

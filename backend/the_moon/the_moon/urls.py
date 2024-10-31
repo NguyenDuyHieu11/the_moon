@@ -20,6 +20,7 @@ from django.views.generic.base import TemplateView
 from chat.views import chat_box
 
 urlpatterns = [
+    path("", include("chat.urls")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path('admin/', admin.site.urls),
     path("accounts/", include("accounts.urls")),
