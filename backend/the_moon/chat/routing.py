@@ -9,4 +9,5 @@ websocket_urlpatterns = [
 
 # websocket_urlpatterns = [
 #     path('ws/chat/', consumers.ChatConsumer.as_asgi()),
-# ]zz
+# ]zzfssf
+

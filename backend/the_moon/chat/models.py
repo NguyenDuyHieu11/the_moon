@@ -33,14 +33,14 @@ class UserProfile(models.Model):
         
 class UserJob(models.Model):
     job = models.CharField(max_length = 255)
-    user_profile = models.ForeignKey(UserProfile, default = 1, on_delete = models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, default = get_default_user_profile, on_delete = models.CASCADE)
 
 class School(models.Model):
     school_title = models.CharField(max_length = 255)
     start_time = models.DateField()
     end_time = models.DateField()
     activity = models.CharField(max_length = 255)
-    user_profile = models.ForeignKey(UserProfile, default = 1, on_delete = models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, default = get_default_user_profile, on_delete = models.CASCADE)
 
     class Meta():
         constraints = [
@@ -51,15 +51,15 @@ class OneOnOneChat(models.Model):
     receiver_email = models.CharField(max_length = 255)
     receiver_phone_number = models.CharField(max_length=15)
     message = models.JSONField() 
-    user_profile = models.ForeignKey(UserProfile, default = 1, on_delete = models.CASCADE) 
+    user_profile = models.ForeignKey(UserProfile, default = get_default_user_profile, on_delete = models.CASCADE) 
     
 class NoteOnFeed(models.Model):
     note = models.CharField(max_length = 60)
-    user_profile = models.ForeignKey(UserProfile, default = 1, on_delete = models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, default = get_default_user_profile, on_delete = models.CASCADE)
 
 
 class ImageOnFeed(models.Model):
-    user_profile = models.ForeignKey(UserProfile, default = 1, on_delete = models.CASCADE)
+    user_profile = models.ForeignKey(UserProfile, default = get_default_user_profile, on_delete = models.CASCADE)
     uploaded_at = models.DateField(default = datetime.date.today, null = False)
     image = models.BinaryField(default=b'\x08', null = False)
 
